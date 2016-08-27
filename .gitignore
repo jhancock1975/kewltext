@@ -2,3 +2,4 @@ node_modules
 .tmp
 coverage
 .DS_Store
+*.swp
