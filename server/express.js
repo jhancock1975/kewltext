@@ -41,6 +41,7 @@ app.use(passport.initialize());
 
 require('./routes/users.server.routes.js')(app);
 require('./routes/article.server.routes.js')(app);
+require('./routes/kewlText.server.routes.js')(app);
 
 //require('./routes/order.server.routes.js')(app);
 app.use(function(req, res, next) {
