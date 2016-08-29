@@ -2,8 +2,6 @@ import React from 'react';
 import KewlTextStore from './../../stores/KewlTextStore.jsx';
 import {Grid, Row, Col} from 'react-bootstrap';
 import Form from './Form.jsx';
-import figlet from 'figlet';
-import jQuery from 'jquery';
 
 class CreateKewlText extends React.Component {
  constructor(props) {
@@ -31,15 +29,8 @@ _formSubmit(value) {
  }
 
 useFiglet(){
-  figlet.setjQuery(jQuery);
-  figlet.defaults({fontPath: "/static/images/assets/fonts"});
-   
-  figlet.preloadFonts(["Standard", "Ghost"], ready);
-   
-  function ready(){
-    console.log(figlet.textSync("ASCII"));
-    console.log(figlet.textSync("Art", "Ghost"));
-  }
+  console.log('new');  
+  KewlTextStore.renderKewlText('test');
  }
   
  render() {

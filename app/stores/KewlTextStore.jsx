@@ -39,6 +39,18 @@ function KewlTextStore() {
       }
     })
   }
+  
+  function renderKewlText(textToRender) {
+      post("/api/kewlTexts/renderText", textToRender).then((g) => {
+        kewlText._id = g._id;
+        history.pushState(null, '/kewlTexts/' + g._id);
+      }).catch((err) => {
+        if (err.status == 401) {
+          error = err.message;
+          authCheck(history);
+        }
+      })
+    }
 
   function editKewlText(kewlText, id, history) {
 
@@ -108,6 +120,7 @@ function KewlTextStore() {
     getKewlTextList: getKewlTextList,
     getKewlText: getKewlText,
     deleteKewlText: deleteKewlText,
+    renderKewlText: renderKewlText,
     fetchKewlTextList: fetchKewlTextList,
     KewlTextDeletionStatus: KewlTextDeletionStatus
   }

@@ -34,7 +34,7 @@ export default(props) => {
         <Route path="/articles/:id" component={ViewArticle}/>
         <Route path="/articles/edit/:id" component={EditArticle} onEnter={requireAuth}/>
 
-<Route path="/kewlTexts/create" component={CreateKewlText} onEnter={requireAuth}/>
+		<Route path="/kewlTexts/create" component={CreateKewlText} onEnter={requireAuth}/>
         <Route path="/kewlTexts" component={ListKewlTexts} onEnter={requireAuth}/>
         <Route path="/kewlTexts/:id" component={ViewKewlText} onEnter={requireAuth}/>
         <Route path="/kewlTexts/edit/:id" component={EditKewlText} onEnter={requireAuth}/>
